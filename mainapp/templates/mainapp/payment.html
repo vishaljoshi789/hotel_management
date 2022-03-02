@@ -1,0 +1,12 @@
+{% include 'index.html' %} 
+
+{% block content %}
+<div class="payment">
+    <h3>Room number {{room.room_no}}</h3>
+    <span>Charges are according to {{room_price}} Rs per day for {{days}} days</span>
+    <span>{{room.name}} your total is {{total_price}} Rs</span>
+    <p>Payment-></p>
+    <span>Paytm : 6395811181</span>
+    <a href="{% url 'home' %}">Already Paid</a>
+</div>
+{% endblock content %}

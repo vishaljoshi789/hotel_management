@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}{% endblock title %} </title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="logo" width="100px">
+            </div>
+            <div class="links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'booking' %}">Booking</a>
+                <a href="{% url 'rooms_info' %}">Rooms Info</a>
+                <a href="">Restaurant</a>
+                <a href="">About Us</a>
+            </div>
+        </nav>
+    </header>
+    {% block content %}{% endblock content %}
+</body>
+</html>

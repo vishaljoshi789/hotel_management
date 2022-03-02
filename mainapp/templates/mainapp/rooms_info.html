@@ -1,0 +1,19 @@
+{% include 'index.html' %} 
+
+{% block content %}
+<div class="rooms_info">
+{% for i in rooms %}
+<div class="card">
+    <h3>{{i.room_no}}</h3>
+    <p>{{i.status}}</p>
+    {% if i.booked %}
+    <a href="{% url 'edit_room' i.room_no %}">Edit</a>
+    <a href="{% url 'remove_room' i.room_no %}">Remove</a>
+    {% else %}
+    <a href="{% url 'book_room' i.room_no %}">Book</a>
+    {% endif %}
+</div>
+
+{% endfor %}
+</div>
+{% endblock content %}
